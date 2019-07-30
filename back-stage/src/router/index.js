@@ -28,6 +28,9 @@ const router=new Router({
           path:"/main/banner",
           component:()=>import("@/views/main/banner/")
         },{
+          path:"/main/article",
+          component:()=>import("@/views/main/article/")
+        },{
           path:"/main",
           redirect:"/main/uploading"
         }

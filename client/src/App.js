@@ -6,11 +6,17 @@ import {BrowserRouter} from "react-router-dom"
 import RouteView from "@/route/RouteView"
 import RouteConfig from "@/route/RouteConfig"
 
+import {Provider} from "react-redux"
+
+import store from "@/store/index"
+
 function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<div>loading....</div>}>
-          <RouteView children={RouteConfig}></RouteView>
+          <Provider store={store}>
+                 <RouteView children={RouteConfig}></RouteView>
+          </Provider>
       </Suspense>
     </BrowserRouter>
   );

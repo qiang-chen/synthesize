@@ -21,9 +21,9 @@
                             <el-menu-item index="1-2" @click="banner">添加banner</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
-                    <el-menu-item index="2">
+                    <el-menu-item index="2" @click="article">
                         <i class="el-icon-menu"></i>
-                        <span slot="title">文字操作</span>
+                        <span slot="title">文章管理</span>
                     </el-menu-item>
                 </el-menu>
             </el-col>
@@ -47,6 +47,8 @@ export default {
       this.index="1-1"
     }else if(this.$route.path=="/main/banner"){
         this.index="1-2"
+    }else{
+      this.index="2"
     }
   },
   methods: {
@@ -59,6 +61,10 @@ export default {
     banner(){
         console.log(22);
         this.$router.history.push("/main/banner")
+    },
+    //点击文章列表切换的路由
+    article(){
+      this.$router.history.push("/main/article")
     },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
